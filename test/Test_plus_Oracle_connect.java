@@ -3,6 +3,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,10 +13,14 @@ import java.sql.Statement;
 public class MyTest {
     @Test
     public void testMyExampleTest() throws Exception {
-
+        /*
         String property = System.setProperty("webdriver.gecko.driver",
                 "C:\\geckodriver-v0.22.0-win64\\geckodriver.exe");
         FirefoxDriver driver=new FirefoxDriver();
+        */
+
+        String property = System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+        ChromeDriver driver=new ChromeDriver();
 
         driver.get("http://demo.guru99.com/");
         WebElement element=driver.findElement(By.xpath("//input[@name='emailid']"));
